@@ -34,7 +34,8 @@ export const rootReducer = (state = initialState, action) => {
               action.payload
             ]
           },
-          additionalPrice: state.additionalPrice + action.payload.price
+          additionalPrice: state.additionalPrice + action.payload.price,
+          additionalFeatures: state.additionalFeatures.filter(item => {return item !== action.payload})
         };
       case REMOVE_ITEM:
         return {
